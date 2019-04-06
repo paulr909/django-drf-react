@@ -1,11 +1,15 @@
-import React, {Component} from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
-class DataProvider extends Component {
-    state = {
-        data: [],
-        loaded: false,
-        placeholder: "Loading..."
+class DataProvider extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            data: [],
+            loaded: false,
+            placeholder: "Loading..."
+        }
     };
 
     componentDidMount() {
