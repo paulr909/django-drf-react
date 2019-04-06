@@ -21,7 +21,7 @@ Run the development server:
 python manage.py runserver
 ```
 
-Run the React App:
+Run react:
 
 ```bash
 npm i
