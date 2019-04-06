@@ -5,7 +5,7 @@ import key from "weak-key";
 const Table = ({data}) =>
     !data.length ? null : (
         <div className="row">
-            <h2>Showing <strong>{data.length}</strong> items</h2>
+            <h1>Showing <strong>{data.length}</strong> items</h1>
             <table className="table table-striped">
                 <thead>
                 <tr>
