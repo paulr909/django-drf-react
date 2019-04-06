@@ -1,11 +1,17 @@
-import React, {Component} from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
-class Form extends Component {
-    state = {
-        name: "",
-        email: "",
-        message: ""
+class Form extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            name: "",
+            email: "",
+            message: ""
+        };
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     };
 
     handleChange = e => {
@@ -25,7 +31,6 @@ class Form extends Component {
     };
 
     render() {
-        const {name, email, message} = this.state;
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
@@ -36,7 +41,7 @@ class Form extends Component {
                             type="text"
                             name="name"
                             onChange={this.handleChange}
-                            value={name}
+                            value={this.state.name}
                             required
                         />
                     </div>
@@ -48,7 +53,7 @@ class Form extends Component {
                                 type="email"
                                 name="email"
                                 onChange={this.handleChange}
-                                value={email}
+                                value={this.state.email}
                                 required
                             />
                         </div>
@@ -60,7 +65,7 @@ class Form extends Component {
                             type="text"
                             name="message"
                             onChange={this.handleChange}
-                            value={message}
+                            value={this.state.message}
                             required
                         />
                     </div>
