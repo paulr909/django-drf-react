@@ -62,7 +62,6 @@ class Form extends React.Component {
                         <label className="label">Message</label>
                         <textarea
                             className="form-control"
-                            type="text"
                             name="message"
                             onChange={this.handleChange}
                             value={this.state.message}
