@@ -8,7 +8,7 @@ class DataProvider extends React.Component {
         this.state = {
             data: [],
             loaded: false,
-            placeholder: "Loading..."
+            message: "Loading..."
         }
     };
 
@@ -16,7 +16,7 @@ class DataProvider extends React.Component {
         fetch(this.props.endpoint)
             .then(response => {
                 if (response.status !== 200) {
-                    return this.setState({placeholder: "Something went wrong"});
+                    return this.setState({message: "Something went wrong"});
                 }
                 return response.json();
             })
@@ -24,8 +24,7 @@ class DataProvider extends React.Component {
     }
 
     render() {
-        const {data, loaded, placeholder} = this.state;
-        return loaded ? this.props.render(data) : <p>{placeholder}</p>;
+        return this.state.loaded ? this.props.render(this.state.data) : <p>{this.state.message}</p>;
     }
 
     static propTypes = {
