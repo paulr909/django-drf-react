@@ -8,7 +8,7 @@ const Table = ({data}) =>
             <h1>Showing <strong>{data.length}</strong> items</h1>
             <table className="table table-striped">
                 <thead>
-                <tr>
+                <tr className='table-header'>
                     {Object.entries(data[0]).map(el => <th key={key(el)}>{el[0]}</th>)}
                 </tr>
                 </thead>
