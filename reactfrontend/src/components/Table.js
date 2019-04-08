@@ -5,17 +5,17 @@ import key from "weak-key";
 const Table = ({data}) =>
     !data.length ? null : (
         <div className="row">
-            <h1>Showing <strong>{data.length}</strong> items</h1>
+            <h1>Showing <strong>{data.length}</strong> Items</h1>
             <table className="table table-striped">
                 <thead>
                 <tr className='table-header'>
-                    {Object.entries(data[0]).map(el => <th key={key(el)}>{el[0]}</th>)}
+                    {Object.entries(data[0]).map(item => <th key={key(item)}>{item[0]}</th>)}
                 </tr>
                 </thead>
                 <tbody>
-                {data.map(el => (
-                    <tr key={el.id}>
-                        {Object.entries(el).map(el => <td key={key(el)}>{el[1]}</td>)}
+                {data.map(item => (
+                    <tr key={item.id}>
+                        {Object.entries(item).map(item => <td key={key(item)}>{item[1]}</td>)}
                     </tr>
                 ))}
                 </tbody>
