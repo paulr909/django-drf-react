@@ -66,10 +66,11 @@ class Form extends React.Component {
                             onChange={this.handleChange}
                             value={this.state.message}
                             required
+                            placeholder={'300 Characters Maximum'}
                         />
                     </div>
                     <div className="form-group">
-                        <button type="submit" className="btn btn-primary">
+                        <button type="submit" className="btn btn-sm btn-primary">
                             Send
                         </button>
                     </div>
