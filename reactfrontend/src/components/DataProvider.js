@@ -24,7 +24,8 @@ class DataProvider extends React.Component {
     }
 
     render() {
-        return this.state.loaded ? this.props.render(this.state.data) : <p>{this.state.message}</p>;
+        return this.state.loaded ? this.props.render(this.state.data) :
+            <p>{this.state.message}</p>;
     }
 
     static propTypes = {

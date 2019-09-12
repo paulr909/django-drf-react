@@ -5,7 +5,8 @@ import Form from "./components/Form";
 
 const App = () => (
     <React.Fragment>
-        <DataProvider endpoint="http://127.0.0.1:8000/api/" render={data => <Table data={data}/>}/>
+        <DataProvider endpoint="http://127.0.0.1:8000/api/"
+                      render={data => <Table data={data}/>}/>
         <Form endpoint="http://127.0.0.1:8000/api/"/>
     </React.Fragment>
 );

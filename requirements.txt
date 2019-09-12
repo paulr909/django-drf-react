@@ -1,3 +1,11 @@
-django==2.2
-djangorestframework==3.9.2
+appdirs==1.4.3
+attrs==19.1.0
+black==19.3b0
+Click==7.0
+coverage==4.5.3
+Django==2.2.5
 django-cors-headers==2.4.0
+djangorestframework==3.9.2
+pytz==2018.9
+sqlparse==0.3.0
+toml==0.10.0

@@ -28,7 +28,7 @@ npm i
 ```
 
 ```bash
-npm run dev
+npm start
 ```
 
 Run e2e tests:

@@ -27,7 +27,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "prop-types": "^15.7.2",
-    "cypress": "^3.2.0"
+    "cypress": "^3.4.1",
+    "prop-types": "^15.7.2"
   }
 }
