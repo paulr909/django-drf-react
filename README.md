@@ -1,7 +1,8 @@
 # Django DRF React App
 
 [![Python Version](https://img.shields.io/badge/python-3.6-brightgreen.svg)](https://python.org)
-[![Django Version](https://img.shields.io/badge/django-2.2-brightgreen.svg)](https://djangoproject.com)
+[![Django Version](https://img.shields.io/badge/django-2.2.5-brightgreen.svg)]
+(https://djangoproject.com)
 
 Run your app in a Virtual Environment: http://python-guide-ru.readthedocs.io/en/latest/dev/virtualenvs.html
 
@@ -21,11 +22,13 @@ Run the development server:
 python manage.py runserver
 ```
 
-Run react:
+Install React:
 
 ```bash
 npm i
 ```
+
+Run React:
 
 ```bash
 npm start
