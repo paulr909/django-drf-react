@@ -2,9 +2,12 @@ import React from "react";
 import PropTypes from "prop-types";
 
 class Form extends React.Component {
+    static propTypes = {
+        endpoint: PropTypes.string.isRequired
+    };
+
     constructor(props) {
         super(props);
-
         this.state = {
             name: "",
             email: "",
@@ -70,7 +73,8 @@ class Form extends React.Component {
                         />
                     </div>
                     <div className="form-group">
-                        <button type="submit" className="btn btn-sm btn-primary">
+                        <button type="submit"
+                                className="btn btn-sm btn-primary">
                             Send
                         </button>
                     </div>
@@ -78,10 +82,6 @@ class Form extends React.Component {
             </div>
         );
     }
-
-    static propTypes = {
-        endpoint: PropTypes.string.isRequired
-    };
 }
 
 export default Form;

@@ -21,20 +21,30 @@ Run the development server:
 python manage.py runserver
 ```
 
+Options for Black, Python code formatter:
+Set: black --line-length 79 [SRC file]
+Shortcut: black -l 79 [SRC file]
+
+```bash
+black -l 79 ~/PycharmProjects/django-projects/django-drf-react/leads/tests.py
+/articles
+/tests/test_follow_user.py
+```
+
 Install React:
 
 ```bash
-npm i
+yarn install
 ```
 
 Run React:
 
 ```bash
-npm start
+yarn start
 ```
 
 Run e2e tests:
 
 ```bash
-npm run e2e
+yarn run e2e
 ```
