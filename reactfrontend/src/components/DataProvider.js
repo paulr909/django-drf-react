@@ -1,37 +1,32 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import PropTypes from "prop-types";
 
-class DataProvider extends React.Component {
-    constructor(props) {
-        super(props);
+const DataProvider = (props) => {
+    const [data, setData] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
 
-        this.state = {
-            data: [],
-            loaded: false,
-            message: "Loading..."
-        }
-    };
+    useEffect(() => {
+        const fetchData = () => {
+            setIsLoading(true);
+            fetch(props.endpoint)
+                .then(res => {
+                    if (res.status !== 200) {
+                        return {message: "Error connecting"};
+                    }
+                    return res.json();
+                })
+                .then(data => setData(data));
+        };
+        fetchData();
+    }, [data, setIsLoading]);
 
-    componentDidMount() {
-        fetch(this.props.endpoint)
-            .then(response => {
-                if (response.status !== 200) {
-                    return this.setState({message: "Something went wrong"});
-                }
-                return response.json();
-            })
-            .then(data => this.setState({data: data, loaded: true}));
-    }
+    return (isLoading ? props.render(data) :
+        <div className="text-center">Loading ...</div>);
+};
 
-    render() {
-        return this.state.loaded ? this.props.render(this.state.data) :
-            <p>{this.state.message}</p>;
-    }
-
-    static propTypes = {
-        endpoint: PropTypes.string.isRequired,
-        render: PropTypes.func.isRequired
-    };
-}
+DataProvider.propTypes = {
+    endpoint: PropTypes.string.isRequired,
+    render: PropTypes.func.isRequired
+};
 
 export default DataProvider;
