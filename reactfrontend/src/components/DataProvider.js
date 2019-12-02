@@ -29,7 +29,7 @@ const DataProvider = props => {
   return isLoading ? (
     props.render(data)
   ) : (
-    <div className="text-center">Loading ...</div>
+    <h3 className="text-center">Loading ...</h3>
   );
 };
 
