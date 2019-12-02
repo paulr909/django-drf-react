@@ -15,10 +15,13 @@ const DataProvider = props => {
           }
           return res.json();
         })
-        .then(data => setData(data));
+        .then(data => setData(data))
+        .catch(() => {
+          console.error();
+        });
     };
     fetchData();
-  }, [data, setIsLoading]);
+  }, []);
 
   return isLoading ? (
     props.render(data)
