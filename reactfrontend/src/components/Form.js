@@ -30,6 +30,7 @@ const Form = props => {
             onChange={e => setName(e.target.value)}
             value={name}
             required
+            placeholder={"Name"}
           />
         </div>
         <div className="form-group">
@@ -42,6 +43,7 @@ const Form = props => {
               onChange={e => setEmail(e.target.value)}
               value={email}
               required
+              placeholder={"Email"}
             />
           </div>
         </div>
@@ -57,7 +59,7 @@ const Form = props => {
           />
         </div>
         <div className="form-group">
-          <button type="submit" className="btn btn-sm btn-primary">
+          <button type="submit" className="btn btn-sm btn-outline-primary">
             Send
           </button>
         </div>
