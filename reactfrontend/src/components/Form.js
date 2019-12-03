@@ -15,6 +15,7 @@ const Form = props => {
       headers: new Headers({ "Content-Type": "application/json" })
     };
     fetch(props.endpoint, config).then(res => console.log(res));
+    window.location.reload(true);
   };
 
   return (

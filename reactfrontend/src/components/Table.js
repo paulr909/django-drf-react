@@ -5,7 +5,7 @@ const Table = ({ data }) =>
   !data.length ? null : (
     <div>
       <h2>
-        Showing <strong>{data.length}</strong> items
+        Showing <strong>{data.length}</strong> item{data.length > 1 ? "s" : ""}
       </h2>
       <table className="table table-striped">
         <thead>
