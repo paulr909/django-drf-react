@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-const Form = props => {
+const Form = ({ endpoint }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -14,7 +14,7 @@ const Form = props => {
       body: JSON.stringify(lead),
       headers: new Headers({ "Content-Type": "application/json" })
     };
-    fetch(props.endpoint, config).then(res => console.log(res));
+    fetch(endpoint, config).then(res => console.log(res));
     window.location.reload(true);
   };
 

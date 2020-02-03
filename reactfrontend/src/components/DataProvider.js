@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
-const DataProvider = props => {
+const DataProvider = ({ endpoint, render }) => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -10,7 +10,7 @@ const DataProvider = props => {
     setTimeout(() => {
       const fetchData = () => {
         setIsLoading(true);
-        fetch(props.endpoint)
+        fetch(endpoint)
           .then(res => {
             if (res.status !== 200) {
               return { message: "Error connecting" };
@@ -26,11 +26,7 @@ const DataProvider = props => {
     }, 2000);
   }, []);
 
-  return isLoading ? (
-    props.render(data)
-  ) : (
-    <h3 className="text-center">Loading...</h3>
-  );
+  return isLoading ? render(data) : <h3 className="text-center">Loading...</h3>;
 };
 
 DataProvider.propTypes = {
