@@ -1,4 +1,4 @@
 from django.urls import path
-from . import views
+from .views import LeadListCreate
 
-urlpatterns = [path("api/", views.LeadListCreate.as_view())]
+urlpatterns = [path("api/", LeadListCreate.as_view())]
