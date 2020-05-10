@@ -1,7 +1,7 @@
 [![Python Version](https://img.shields.io/badge/python-3.8-brightgreen.svg)](https://python.org)
 [![Django Version](https://img.shields.io/badge/django-3.0.6-brightgreen.svg)](https://djangoproject.com)
 
-# Django DRF React. Basic App
+# Django DRF React / Basic App
 
 Run your app in a Virtual Environment: http://python-guide-ru.readthedocs.io/en/latest/dev/virtualenvs.html
 
@@ -31,15 +31,11 @@ black -l 79 ~/PycharmProjects/django-projects/django-drf-react/leads/tests.py
 /tests/test_follow_user.py
 ```
 
-Install React:
+React:
 
 ```
 yarn install
-```
 
-Run React:
-
-```
 yarn start
 ```
 
