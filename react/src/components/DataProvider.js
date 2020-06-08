@@ -3,13 +3,13 @@ import PropTypes from "prop-types";
 
 const DataProvider = ({ endpoint, render }) => {
   const [data, setData] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     // mimic slow network 2000ms
     setTimeout(() => {
       const fetchData = () => {
-        setIsLoading(true);
+        setLoading(true);
         fetch(endpoint)
           .then(res => {
             if (res.status !== 200) {
@@ -26,7 +26,7 @@ const DataProvider = ({ endpoint, render }) => {
     }, 2000);
   }, []);
 
-  return isLoading ? render(data) : <h3 className="text-center">Loading...</h3>;
+  return loading ? render(data) : <h3 className="text-center">Loading...</h3>;
 };
 
 DataProvider.propTypes = {
