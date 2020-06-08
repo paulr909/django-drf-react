@@ -1,4 +1,4 @@
-describe("Django DRF React", () => {
+describe("Load page and enter form", () => {
   const lead = {
     name: "Jenny",
     email: "jenny@mail.com",
@@ -10,7 +10,7 @@ describe("Django DRF React", () => {
     cy.exec("npm run flush");
   });
 
-  it("should be able to fill in a form", () => {
+  it("should be able to complete form", () => {
     cy.visit("/");
 
     cy.get('input[name="name"]')
@@ -28,7 +28,7 @@ describe("Django DRF React", () => {
     cy.get("form").submit();
   });
 
-  it("should be able to see the table", () => {
+  it("should be able to see table data", () => {
     cy.visit("/");
     cy.get("tr").contains(`${lead.name}${lead.email}${lead.message}`);
   });
