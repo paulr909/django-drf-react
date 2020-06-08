@@ -1,7 +1,7 @@
-import React from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 
-class Legacy_DataProvider extends React.Component {
+class Legacy_DataProvider extends Component {
   constructor(props) {
     super(props);
 

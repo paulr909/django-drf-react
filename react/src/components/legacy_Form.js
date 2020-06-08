@@ -1,7 +1,7 @@
-import React from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 
-class Legacy_Form extends React.Component {
+class Legacy_Form extends Component {
   static propTypes = {
     endpoint: PropTypes.string.isRequired
   };
