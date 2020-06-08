@@ -21,16 +21,6 @@ Run the development server:
 python manage.py runserver
 ```
 
-Options for Black, Python code formatter:
-Set: black --line-length 79 [SRC file]
-Shortcut: black -l 79 [SRC file]
-
-```
-black -l 79 ~/PycharmProjects/django-projects/django-drf-react/leads/tests.py
-/articles
-/tests/test_follow_user.py
-```
-
 React:
 
 ```
