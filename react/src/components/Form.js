@@ -1,6 +1,6 @@
 import React from "react";
-import useFormValidation from "../useValidation";
-import validateAuth from "../validateAuth";
+import useFormValidation from "../utils/useValidation";
+import validateAuth from "../utils/validateAuth";
 
 const INITIAL_STATE = {
   name: "",
@@ -39,7 +39,7 @@ const Form = () => {
           <label className="label">Email</label>
           <div>
             <input
-              className={"form-control" && errors.email && "error-input"}
+              className={errors.email && "error-input"}
               type="email"
               name="email"
               onChange={handleChange}
@@ -54,7 +54,7 @@ const Form = () => {
         <div className="form-group">
           <label className="label">Message</label>
           <textarea
-            className={"form-control" && errors.message && "error-input"}
+            className={errors.message && "error-input"}
             name="message"
             onChange={handleChange}
             value={values.message}

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { baseUrl } from "./utils/baseUrl";
+import { baseUrl } from "./baseUrl";
 
 const useValidation = (initialState, validate) => {
   const [values, setValues] = useState(initialState);
