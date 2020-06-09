@@ -1,5 +1,5 @@
 import React from "react";
-import useFormValidation from "../utils/useValidation";
+import useValidation from "../utils/useValidation";
 import validateAuth from "../utils/validateAuth";
 
 const INITIAL_STATE = {
@@ -16,7 +16,7 @@ const Form = () => {
     values,
     errors,
     submitting
-  } = useFormValidation(INITIAL_STATE, validateAuth);
+  } = useValidation(INITIAL_STATE, validateAuth);
 
   return (
     <div>
