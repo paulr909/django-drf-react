@@ -11,7 +11,7 @@ describe("Load page and enter form", () => {
   });
 
   it("should be able to complete form", () => {
-    cy.visit("/");
+    cy.visit("/form");
 
     cy.get('input[name="name"]')
       .type(lead.name)
