@@ -2,8 +2,8 @@ import React from "react";
 import DataProvider from "./components/DataProvider";
 import Table from "./components/Table";
 import Form from "./components/Form";
-
-const baseUrl = "http://127.0.0.1:8000/api/";
+import { baseUrl } from "./utils/baseUrl";
+import "./App.css";
 
 const App = () => {
   return (
@@ -18,7 +18,7 @@ const App = () => {
         </div>
         <div className="col-md-4">
           <h2>Add new business lead</h2>
-          <Form endpoint={baseUrl} />
+          <Form />
         </div>
       </div>
     </div>

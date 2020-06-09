@@ -1,75 +1,81 @@
-import React, { useState } from "react";
-import PropTypes from "prop-types";
+import React from "react";
+import useFormValidation from "../useValidation";
+import validateAuth from "../validateAuth";
 
-const Form = ({ endpoint }) => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+const INITIAL_STATE = {
+  name: "",
+  email: "",
+  message: ""
+};
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    const lead = { name, email, message };
-    const config = {
-      method: "POST",
-      body: JSON.stringify(lead),
-      headers: new Headers({ "Content-Type": "application/json" })
-    };
-    fetch(endpoint, config).then(res => console.log(res));
-    window.location.reload(true);
-  };
+const Form = () => {
+  const {
+    handleSubmit,
+    handleChange,
+    handleBlur,
+    values,
+    errors,
+    submitting
+  } = useFormValidation(INITIAL_STATE, validateAuth);
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} noValidate={true}>
         <div className="form-group">
           <label className="label">Name</label>
           <input
-            className="form-control"
+            className={errors.name && "error-input"}
             type="text"
             name="name"
-            onChange={e => setName(e.target.value)}
-            value={name}
+            onChange={handleChange}
+            value={values.name}
+            onBlur={handleBlur}
             required
-            placeholder={"Name"}
+            placeholder="Name"
           />
+          {errors.name && <p className="error-text">{errors.name}</p>}
         </div>
         <div className="form-group">
           <label className="label">Email</label>
           <div>
             <input
-              className="form-control"
+              className={"form-control" && errors.email && "error-input"}
               type="email"
               name="email"
-              onChange={e => setEmail(e.target.value)}
-              value={email}
+              onChange={handleChange}
+              value={values.email}
+              onBlur={handleBlur}
               required
-              placeholder={"Email"}
+              placeholder="Email"
             />
+            {errors.email && <p className="error-text">{errors.email}</p>}
           </div>
         </div>
         <div className="form-group">
           <label className="label">Message</label>
           <textarea
-            className="form-control"
+            className={"form-control" && errors.message && "error-input"}
             name="message"
-            onChange={e => setMessage(e.target.value)}
-            value={message}
+            onChange={handleChange}
+            value={values.message}
+            onBlur={handleBlur}
             required
-            placeholder={"300 Characters Maximum"}
+            placeholder="300 Characters Maximum"
           />
+          {errors.message && <p className="error-text">{errors.message}</p>}
         </div>
         <div className="form-group">
-          <button type="submit" className="btn btn-sm btn-outline-primary">
+          <button
+            disabled={submitting}
+            type="submit"
+            className="btn btn-sm btn-outline-primary"
+          >
             Send
           </button>
         </div>
       </form>
     </div>
   );
-};
-
-Form.propTypes = {
-  endpoint: PropTypes.string.isRequired
 };
 
 export default Form;
