@@ -1,9 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
 const Table = ({ data }) =>
   !data.length ? null : (
     <div>
+      <Link to="/form" className="btn btn-outline-dark btn-sm mb-3">
+        Form &gt;
+      </Link>
       <h2>
         Showing <strong>{data.length}</strong> item{data.length > 1 ? "s" : ""}
       </h2>

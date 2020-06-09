@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import useValidation from "../utils/useValidation";
 import validateAuth from "../utils/validateAuth";
 
@@ -20,6 +21,9 @@ const Form = () => {
 
   return (
     <div>
+      <Link to="/" className="btn btn-outline-dark btn-sm mb-3">
+        Leads &gt;
+      </Link>
       <form onSubmit={handleSubmit} noValidate={true}>
         <div className="form-group">
           <label className="label">Name</label>
@@ -68,7 +72,7 @@ const Form = () => {
           <button
             disabled={submitting}
             type="submit"
-            className="btn btn-sm btn-outline-primary"
+            className="btn btn-outline-primary btn-sm"
           >
             Send
           </button>
