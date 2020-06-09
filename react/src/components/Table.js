@@ -6,7 +6,7 @@ const Table = ({ data }) =>
   !data.length ? null : (
     <div>
       <Link to="/form" className="btn btn-outline-dark btn-sm mb-3">
-        Form &gt;
+        Add Leads &gt;
       </Link>
       <h2>
         Showing <strong>{data.length}</strong> item{data.length > 1 ? "s" : ""}
