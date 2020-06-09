@@ -11,7 +11,7 @@ const useValidation = (initialState, validate) => {
       const noErrors = Object.keys(errors).length === 0;
       if (noErrors) {
         console.log(
-          "authenticated!",
+          // "authenticated!",
           values.name,
           values.email,
           values.message
