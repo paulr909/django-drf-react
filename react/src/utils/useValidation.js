@@ -49,7 +49,7 @@ const useValidation = (initialState, validate) => {
       headers: new Headers({ "Content-Type": "application/json" })
     };
     fetch(baseUrl, config).then(res => console.log(res));
-    window.location.reload(true);
+    setValues(initialState);
   };
 
   return {
