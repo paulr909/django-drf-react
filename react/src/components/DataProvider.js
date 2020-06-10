@@ -8,9 +8,9 @@ const DataProvider = ({ endpoint, render }) => {
   useEffect(() => {
     // mimic slow network 2000ms
     setTimeout(() => {
-      const fetchData = () => {
+      const fetchData = async () => {
         setLoading(true);
-        fetch(endpoint)
+        await fetch(endpoint)
           .then(res => {
             if (res.status !== 200) {
               return { message: "Error connecting" };
