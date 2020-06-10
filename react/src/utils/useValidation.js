@@ -36,7 +36,7 @@ const useValidation = (initialState, validate) => {
     setErrors(validationErrors);
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault();
     const validationErrors = validate(values);
     setErrors(validationErrors);
@@ -48,7 +48,7 @@ const useValidation = (initialState, validate) => {
       body: JSON.stringify(lead),
       headers: new Headers({ "Content-Type": "application/json" })
     };
-    fetch(baseUrl, config).then(res => console.log(res));
+    await fetch(baseUrl, config).then(res => console.log(res));
     setValues(initialState);
   };
 
