@@ -20,12 +20,12 @@ python manage.py runserver
 
 React:
 ```
-npm install
+npm i
 
 npm start
 ```
 
 Run e2e tests:
 ```
-npm run e2e
+npm run cypress:open
 ```

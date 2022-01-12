@@ -18,7 +18,7 @@ const App = () => {
                   <h1 className="text-center mb-3">Business Leads</h1>
                   <DataProvider
                     endpoint={baseUrl}
-                    render={data => <Table data={data} />}
+                    render={(data) => <Table data={data} />}
                   />
                 </div>
               </div>

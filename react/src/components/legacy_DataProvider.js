@@ -8,19 +8,19 @@ class Legacy_DataProvider extends Component {
     this.state = {
       data: [],
       loaded: false,
-      message: "Loading..."
+      message: "Loading...",
     };
   }
 
   componentDidMount() {
     fetch(this.props.endpoint)
-      .then(response => {
+      .then((response) => {
         if (response.status !== 200) {
           return this.setState({ message: "Something went wrong" });
         }
         return response.json();
       })
-      .then(data => this.setState({ data: data, loaded: true }));
+      .then((data) => this.setState({ data: data, loaded: true }));
   }
 
   render() {
@@ -33,7 +33,7 @@ class Legacy_DataProvider extends Component {
 
   static propTypes = {
     endpoint: PropTypes.string.isRequired,
-    render: PropTypes.func.isRequired
+    render: PropTypes.func.isRequired,
   };
 }
 

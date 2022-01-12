@@ -6,18 +6,12 @@ import validateAuth from "../utils/validateAuth";
 const INITIAL_STATE = {
   name: "",
   email: "",
-  message: ""
+  message: "",
 };
 
 const Form = () => {
-  const {
-    handleSubmit,
-    handleChange,
-    handleBlur,
-    values,
-    errors,
-    submitting
-  } = useValidation(INITIAL_STATE, validateAuth);
+  const { handleSubmit, handleChange, handleBlur, values, errors, submitting } =
+    useValidation(INITIAL_STATE, validateAuth);
 
   return (
     <div>

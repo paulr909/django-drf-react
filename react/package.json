@@ -15,7 +15,7 @@
     "flush": "react-scripts flush",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "e2e": "cypress open --project e2e/"
+    "cypress:open": "cypress open"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -28,6 +28,7 @@
   ],
   "devDependencies": {
     "cypress": "4.8.0",
+    "prettier": "^2.5.1",
     "prop-types": "^15.7.2"
   }
 }

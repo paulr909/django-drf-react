@@ -24,10 +24,10 @@ const useValidation = (initialState, validate) => {
     }
   }, [errors]);
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     setValues({
       ...values,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -36,7 +36,7 @@ const useValidation = (initialState, validate) => {
     setErrors(validationErrors);
   };
 
-  const handleSubmit = async e => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const validationErrors = validate(values);
     setErrors(validationErrors);
@@ -46,9 +46,9 @@ const useValidation = (initialState, validate) => {
     const config = {
       method: "POST",
       body: JSON.stringify(lead),
-      headers: new Headers({ "Content-Type": "application/json" })
+      headers: new Headers({ "Content-Type": "application/json" }),
     };
-    await fetch(baseUrl, config).then(res => console.log(res));
+    await fetch(baseUrl, config).then((res) => console.log(res));
     setValues(initialState);
   };
 
@@ -58,7 +58,7 @@ const useValidation = (initialState, validate) => {
     handleBlur,
     values,
     errors,
-    submitting
+    submitting,
   };
 };
 

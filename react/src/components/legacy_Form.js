@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 class Legacy_Form extends Component {
   static propTypes = {
-    endpoint: PropTypes.string.isRequired
+    endpoint: PropTypes.string.isRequired,
   };
 
   constructor(props) {
@@ -11,26 +11,28 @@ class Legacy_Form extends Component {
     this.state = {
       name: "",
       email: "",
-      message: ""
+      message: "",
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange = e => {
+  handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   };
 
-  handleSubmit = e => {
+  handleSubmit = (e) => {
     e.preventDefault();
     const { name, email, message } = this.state;
     const lead = { name, email, message };
     const config = {
       method: "post",
       body: JSON.stringify(lead),
-      headers: new Headers({ "Content-Type": "application/json" })
+      headers: new Headers({ "Content-Type": "application/json" }),
     };
-    fetch(this.props.endpoint, config).then(response => console.log(response));
+    fetch(this.props.endpoint, config).then((response) =>
+      console.log(response)
+    );
   };
 
   render() {

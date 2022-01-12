@@ -1,4 +1,4 @@
-const validateAuth = values => {
+const validateAuth = (values) => {
   let errors = {};
 
   if (!values.email) {
