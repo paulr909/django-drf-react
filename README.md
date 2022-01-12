@@ -5,9 +5,6 @@
 # Django DRF React / Basic App
 
 Run your app in a Virtual Environment: http://python-guide-ru.readthedocs.io/en/latest/dev/virtualenvs.html
-```
-git clone https://paulrogers@bitbucket.org/paulrogers/django-drf-react.git
-```
 
 Install the requirements:
 ```
