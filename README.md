@@ -27,3 +27,8 @@ Run e2e tests:
 ```
 npm run cypress:open
 ```
+
+Run headless browser e2e tests with Cypress:
+```shell
+./node_modules/.bin/cypress run
+```

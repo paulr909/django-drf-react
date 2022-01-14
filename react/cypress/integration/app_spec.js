@@ -1,8 +1,8 @@
-describe("Load page and enter form", () => {
+describe("Load page and complete form", () => {
   const lead = {
     name: "Jenny",
     email: "jenny@mail.com",
-    message: "I am looking for a new film role",
+    message: "I am looking for a new film role.",
   };
 
   before(() => {
