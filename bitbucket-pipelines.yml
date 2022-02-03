@@ -16,7 +16,7 @@ pipelines:
         caches:
           - node
         script:
-          - cd frontend
+          - cd react
           - rm -rf package-lock.json
           - rm -rf node_modules
           - npm install
