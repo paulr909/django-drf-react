@@ -12,7 +12,7 @@ pipelines:
 
     - step:
         name: Build and Test React
-        image: node:latest
+        image: node:12.19.0
         caches:
           - node
         script:
