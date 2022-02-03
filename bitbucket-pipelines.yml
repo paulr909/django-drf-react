@@ -31,7 +31,7 @@ pipelines:
           - cd react
           - npm ci
           - npm run start:ci &
-          - npx cypress run
+          - npm cypress run
         artifacts:
           - cypress/screenshots/**
           - cypress/videos/**
