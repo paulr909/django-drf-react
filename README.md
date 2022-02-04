@@ -26,7 +26,7 @@ npm start
 
 Run e2e tests:
 ```
-npm run cypress:open
+npx cypress open
 ```
 
 Run headless browser e2e tests with Cypress:
